@@ -1,0 +1,50 @@
+﻿@model List<WebPage.ViewModel.DatosViewModel>
+
+<div class="card" style="width: min-content">
+
+    <div><h5 class="card-header">Contents</h5></div>
+    <br />
+    <div>
+        <form asp-action="Index">
+            <p>
+                <input type="text" name="title" class="form-text" />
+                <input type="submit" value="Buscar" class="btn btn-primary" />
+            </p>
+
+        </form>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Link</th>
+                    <th scope="col">Content</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Date</th>
+
+                </tr>
+
+
+            </thead>
+            <tbody>
+                @foreach (var e in Model)
+                {
+                    <tr>
+                        <th scope="row">@e.Id</th>
+                        <td>@e.Link</td>
+                        <td>@e.Content</td>
+                        <td>@e.Title</td>
+                        <td>@e.Date</td>
+
+
+
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
